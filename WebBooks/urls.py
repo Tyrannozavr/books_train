@@ -20,11 +20,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('catalog/', include('catalog.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/profile/', views.profile),
+    path('accounts/logout/', views.logout),
+    path('catalog/', include('catalog.urls'), name='login'),
     path('admin/', admin.site.urls),
-
-    # path('users/<int:id>/<str:name>/', views.user, name='myurl'),
-    # path('users/details/<int:id>/', views.user_details, name='model-detail-view'),
-    # path('books/<int:id>/', views.book, name='book-detail'),
-    # path('gennre/<int:id>/', views.genre, name='detail-genre')
-]
+    ]
