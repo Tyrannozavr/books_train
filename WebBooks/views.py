@@ -10,7 +10,3 @@ def index(request):
 
 def profile(request):
     return HttpResponse('<h1>this page profile</h1>')
-
-
-def logout(request):
-    return render(request, 'WebBooks/logout/')

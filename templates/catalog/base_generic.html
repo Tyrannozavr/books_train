@@ -31,6 +31,13 @@ style = "width:100px; height:100px;" align="absmiddle">
     <li><a href="{% url 'index' %}">Главная страница</a></li>
     <li><a href="{% url 'book' %}">Bce книги</a></li>
     <li><a href="{% url 'authors' %}">Bce авторы</a></li>
+    {{ user.is_authenticated }}
+    {% if user.is_authenticated %}
+        <li>Пользователь: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout' %}">Выйти из системы:</a></li>
+    {% else %}
+        <li><a href="{% url 'login' %}">Войти в систему:</a></li>
+    {% endif %}
 </ul>
 {% endblock %}
 </div>Пример создания веб-интерфейса для пользователей сайта «Мир книг»
